@@ -18,4 +18,9 @@ def test_func(a, b, c):
     print(a+b+c)
 
 
-test_func(1, 2, 5)
+def main():
+    test_func(1, 2, 5)
+
+
+if __name__ == "__main__":
+    main()

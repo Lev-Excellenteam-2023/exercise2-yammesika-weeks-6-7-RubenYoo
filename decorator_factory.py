@@ -10,12 +10,17 @@ def type_check(correct_type):
 
 
 @type_check(int)
-def times2(num):
-    return num*2
+def times2(number):
+    return number * 2
 
 
-try:
-    print(times2(8))
-    print(times2('a'))
-except TypeError as e:
-    print(e)
+def main():
+    try:
+        print(times2(8))
+        print(times2('a'))
+    except TypeError as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    main()
