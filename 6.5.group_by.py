@@ -1,5 +1,11 @@
-def group_by(func, it):
-    return {func(i): [j for j in it if func(i) == func(j)] for i in it}
+def group_by(func, iterable):
+    return {func(key): [value for value in iterable if func(key) == func(value)] for key in iterable}
 
 
-print(group_by(len, ["hi", "bye", "yo", "try"]))
+def main():
+    print(group_by(len, ["hi", "bye", "yo", "try"]))
+
+
+if __name__ == "__main__":
+    main()
+
