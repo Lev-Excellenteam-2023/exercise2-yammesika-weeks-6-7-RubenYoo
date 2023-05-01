@@ -1,14 +1,20 @@
 from PIL import Image
 PATH = 'code.png'
 
-s = ''
-with Image.open(PATH) as img:
-    for i in range(img.size[0]):
-        for j in range(img.size[1]):
-            if img.getpixel((i, j)) == 1:
-                s += chr(j)
-                
-print(s)
+
+def decode_image(path):
+    with Image.open(path) as img:
+        width, height = img.size
+        return ''.join(chr(column) for row in range(width) for column in range(height)
+                       if img.getpixel((row, column)) == 1)
+
+
+def main():
+    print(decode_image(PATH))
+
+
+if __name__ == "__main__":
+    main()
 
 
 
